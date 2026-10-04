@@ -251,7 +251,6 @@ public class Dijkstra_impl extends AbstractPathfinding_algo implements IPathfind
     }
 
 
-    //TODO Remove after test
     public Stack<Coordinates> getPath() {
         return (Stack<Coordinates>) path.clone();
     }

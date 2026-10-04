@@ -36,21 +36,21 @@ public class LevelManager implements Presentateur {
 
 	/**
 	 * <p>Change le niveau en cours.</p>
-	 * @see IJeu#switchLeveApple()
+	 * @see IJeu#switchLevelApple()
 	 */
-	public void switchLeveApple() {
-		game.switchLeveApple();
+	public void switchLevelApple() {
+		game.switchLevelApple();
 	}
 
 	/**
-	 * @see #switchLeveApple()
+	 * @see #switchLevelApple()
 	 */
 	public void switchLevelRarity() {
 		game.switchLevelRarity();
 	}
 
 	/**
-	 * @see #switchLeveApple()
+	 * @see #switchLevelApple()
 	 */
 	public void switchLevelRainbow() {
 		game.switchLevelRainbow();
@@ -100,10 +100,10 @@ public class LevelManager implements Presentateur {
 	}
 
 	/**
-	 * @see Presentateur#AddListener(LevelListener)
+	 * @see Presentateur#addListener(LevelListener)
 	 * @param listener l'écoutant à ajouter.
 	 */
-	public void AddListener(LevelListener listener) {
+	public void addListener(LevelListener listener) {
 		game.addListener(listener);
 	}
 

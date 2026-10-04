@@ -1,9 +1,7 @@
 package com.antoine.contracts;
 
-import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
-import java.util.Stack;
 
 /**
  * <b>Représente un ennemi</b>
@@ -34,10 +32,4 @@ public interface IEnnemi extends IEntity {
      * <p>Démarrage initiale du Thread qui gère le choix de direction du déplacement.</p>
      */
     void startThinking();
-
-    /**
-     * @return le path sous forme de pile de coordonnée.
-     */
-    //TODO Remove after Test
-    Stack<Coordinates> getPath();
 }

@@ -29,7 +29,7 @@ public class SpecialPanel extends JPanel implements LevelListener {
 	//==================    Constructeurs   ==================
 	public SpecialPanel(Presentateur model) {
 		this.presentateur= model;
-		this.presentateur.AddListener(this);
+		this.presentateur.addListener(this);
 		this.afficheur= new AfficheurLevel();
 	}
 

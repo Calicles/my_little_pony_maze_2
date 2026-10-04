@@ -122,7 +122,7 @@ public class Game implements IJeu {
     /**
      * @see this#switchLevel4()
      */
-    public void switchLeveApple() {
+    public void switchLevelApple() {
         jukebox.switchTo("apple");
         levelRunning= levelApple;
         levelApple.selected();

@@ -7,7 +7,6 @@ import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 import com.antoine.transfert_strategy.IA_transfertStrategy_std;
 
-import java.util.Stack;
 
 /**
  * <b>Classe qui représente un ennemi</b>
@@ -124,16 +123,5 @@ public class Boss extends AbstractCharacter implements IEnnemi {
 	@Override
 	public void startThinking() {
 		deplacement.startThinking();
-	}
-
-
-	/**
-	 * @see IA_transfertStrategy_std#getPath()
-	 * @return
-	 */
-	//TODO Remove after Test
-	@Override
-	public Stack<Coordinates> getPath() {
-		return deplacement.getPath();
 	}
 }

@@ -41,12 +41,12 @@ public interface Presentateur {
      * <p>Ajoute un écoutant pour être prévenu des changements du modèle.</p>
      * @param listener l'écoutant à ajouter.
      */
-    void AddListener(LevelListener listener);
+    void addListener(LevelListener listener);
 
     /**
      * <p>Change le niveau en cours</p>
      */
-    void switchLeveApple();
+    void switchLevelApple();
 
     /**
      * <p>Change le niveau en cours.</p>

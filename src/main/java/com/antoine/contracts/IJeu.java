@@ -27,7 +27,7 @@ public interface IJeu {
     /**
      * <p>Change le niveau en cours sur le niveau Apple.</p>
      */
-    void switchLeveApple();
+    void switchLevelApple();
 
     /**
      * <p>Charge le niveau en cours sur le niveu de Rarity.</p>

@@ -1,12 +1,10 @@
 package com.antoine.contracts;
 
 import com.antoine.events.LevelChangeEvent;
-import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
 import java.awt.*;
 import java.util.List;
-import java.util.Stack;
 
 /**
  * <b>Représente un niveau de jeu avec tous ses composants.</b>
@@ -162,10 +160,4 @@ public interface ILevel {
      * @return l'id du niveau/
      */
     int getId();
-
-    /**
-     * @return Le path du pnj, pour débug.
-     */
-    //TODO Remove after Test
-    Stack<Coordinates> getPath();
 }

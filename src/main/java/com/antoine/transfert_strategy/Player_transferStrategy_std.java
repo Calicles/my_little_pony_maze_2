@@ -6,7 +6,6 @@ import com.antoine.contracts.ITransfert_strategy;
 import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
-import java.util.Stack;
 
 /**
  * <b>Calsse qui représente la capacité de déplacement d'un joueur.</b>
@@ -79,11 +78,4 @@ public class Player_transferStrategy_std extends AbstractTransfer implements ITr
 	public void startThinking() {
 
 	}
-
-	//TODO Remove after test
-	@Override
-	public Stack<Coordinates> getPath() {
-		return null;
-	}
-
 }

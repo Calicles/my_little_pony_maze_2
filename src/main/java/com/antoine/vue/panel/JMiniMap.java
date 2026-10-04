@@ -25,7 +25,7 @@ public class JMiniMap extends JPanel implements LevelListener {
 	//======================    Constructeurs   ========================
 	public JMiniMap(Presentateur presentateur) {
 		this.presentateur= presentateur;
-		this.presentateur.AddListener(this);
+		this.presentateur.addListener(this);
 		this.afficheurMiniMap= new AfficheurMiniMap();
 	}
 

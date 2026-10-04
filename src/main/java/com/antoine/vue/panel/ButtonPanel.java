@@ -86,11 +86,11 @@ public class ButtonPanel extends JPanel implements LevelListener {
 		this.add(rarityButton);
 		this.add(rainbowButton);
 
-		appleButton.addActionListener(e->presentateur.switchLeveApple());
+		appleButton.addActionListener(e->presentateur.switchLevelApple());
 		rarityButton.addActionListener(e->presentateur.switchLevelRarity());
 		rainbowButton.addActionListener(e->presentateur.switchLevelRainbow());
 
-		presentateur.AddListener(this);
+		presentateur.addListener(this);
 		this.setBackground(Color.PINK);
 	}
 }

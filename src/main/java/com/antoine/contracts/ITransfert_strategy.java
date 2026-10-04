@@ -3,7 +3,6 @@ package com.antoine.contracts;
 import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
-import java.util.Stack;
 
 /**
  * <b>Représente les fonctionnalité de déplacement d'un personnage.</b>
@@ -68,12 +67,4 @@ public interface ITransfert_strategy {
      * <p>Démarrage initiale du Thread de calcule des trajectoires.</p>
      */
     void startThinking();
-
-    /**
-     * <p>Retourne un chemin à suivre</p>
-     * Pour débug.
-     * @return le chemin.
-     */
-    //TODO Remove after Test
-    Stack<Coordinates> getPath();
 }

@@ -7,7 +7,6 @@ import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 import com.antoine.geometry.Tile;
 
-import java.util.Stack;
 
 /**
  * <b>Implémente une stratégie de déplacement pour un personnage non joueur.</b>
@@ -71,12 +70,6 @@ public class IA_transfertStrategy_std extends AbstractTransfer implements ITrans
 	public void startThinking(){
 		buildThinkPattern();
 		greyCell.start();
-	}
-
-	//TODO Remove after test
-	@Override
-	public Stack<Coordinates> getPath() {
-		return null;
 	}
 
 	/**
