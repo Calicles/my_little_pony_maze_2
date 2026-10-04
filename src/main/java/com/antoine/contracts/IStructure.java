@@ -1,9 +1,7 @@
 package com.antoine.contracts;
 
-import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
-import java.util.Stack;
 
 /**
  * <b>Représente une structure à visiter</b>
@@ -58,9 +56,4 @@ public interface IStructure {
      * @return la hauteur de la carte.
      */
     int getMapWidth();
-
-    /**
-     * @return le path du personnage non joueur, pour environnement de débugage.
-     */
-    Stack<Coordinates> getPath();
 }

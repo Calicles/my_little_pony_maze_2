@@ -67,7 +67,7 @@ public class Jukebox {
 
     public void setSound(String idSoundPath){
         String[] buf = idSoundPath.split(",");
-        sounds.put(buf[0], new SoundEffect(buf[1], musicVolume));
+        sounds.put(buf[0], new SoundEffect(buf[1], soundVolume));
     }
 
     /**

@@ -48,12 +48,12 @@ public class Frame extends JFrame {
 		miniMapPane.setBackground(Color.PINK);
 
 		JCardPane panelBas = new JCardPane("boutons", buttons, "miniMap", miniMapPane);
-		presentateur.AddListener(panelBas);
+		presentateur.addListener(panelBas);
 
 		ProgressBar barre = new ProgressBar(0, 6);
 		barre.setBorder(bevel);
 
-		presentateur.AddListener(barre);
+		presentateur.addListener(barre);
 
 
 

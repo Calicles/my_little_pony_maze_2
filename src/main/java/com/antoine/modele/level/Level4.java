@@ -14,7 +14,6 @@ import com.antoine.structure_donnee.LevelState;
 
 import java.awt.image.BufferedImage;
 import java.util.List;
-import java.util.Stack;
 
 
 /**
@@ -407,12 +406,4 @@ public class Level4 extends Level3 implements ILevel {
         }
         return running;
     }
-
-
-    //TODO Remove after Test
-    @Override
-    public Stack<Coordinates> getPath() {
-        return boss.getPath();
-    }
-
 }

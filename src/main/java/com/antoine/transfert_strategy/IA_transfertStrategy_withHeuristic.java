@@ -80,14 +80,6 @@ public class IA_transfertStrategy_withHeuristic extends IA_transfertStrategy_std
         oldPlayerPos = new Coordinates(player.getBeginX(), player.getBeginY());
     }
 
-
-    //TODO Remove after Test
-    @Override
-    public Stack<Coordinates> getPath() {
-        return pathfinder.getPath();
-    }
-
-
     /**
      * <p>Utilise le pathfinder pour trouver un chemin vers le joueur.</p>
      * Adapte le vecteur en cas de chemin non trouver ou d'obstacle.

@@ -9,7 +9,7 @@ import static org.junit.Assert.*;
 
 public class Character_readerTest {
 
-    String setPath= "./ressources/setPonyAnimation/set.txt";
+    String setPath= "/ressources/setPonyAnimation/setApple.txt";
     HashMap<Integer, BufferedImage[]> anim;
 
 
@@ -19,7 +19,7 @@ public class Character_readerTest {
     @Test
     public void readCharactereAnimation() {
         anim= Character_reader.readCharactereAnimation(setPath);
-        assertTrue(( anim != null ));
+        assertNotNull(anim);
     }
 
 
@@ -29,7 +29,7 @@ public class Character_readerTest {
     @Test
     public void readCharactereAnimation1() {
         anim= Character_reader.readCharactereAnimation(setPath);
-        assertTrue((anim.get(0)[0].getWidth() == 34));
+        assertEquals(34, anim.get(0)[0].getWidth());
     }
 
 
@@ -49,7 +49,7 @@ public class Character_readerTest {
     @Test
     public void readCharactereAnimation3() {
         anim= Character_reader.readCharactereAnimation(setPath);
-        assertTrue((anim.get(0).length == 3));
+        assertEquals(3, anim.get(0).length);
     }
 
 
@@ -59,6 +59,6 @@ public class Character_readerTest {
     @Test
     public void readCharactereAnimation4() {
         anim= Character_reader.readCharactereAnimation(setPath);
-        assertTrue((anim.size() == 4));
+        assertEquals(4, anim.size());
     }
 }

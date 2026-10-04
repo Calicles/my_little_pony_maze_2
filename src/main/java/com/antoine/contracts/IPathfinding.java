@@ -27,7 +27,6 @@ public interface IPathfinding<T> {
     /**
      * @return le chemin à suivre sous forme de coordonnées empilées.
      */
-    //TODO Remove after test
     Stack<Coordinates> getPath();
 
     /**

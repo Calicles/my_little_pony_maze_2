@@ -9,7 +9,6 @@ import com.antoine.geometry.Coordinates;
 import com.antoine.geometry.Rectangle;
 
 import java.util.List;
-import java.util.Stack;
 
 /**
  * <b>Représente un niveau dont les dimensions de la carte peuvent dépasser les dimensions de l'éran.</b>
@@ -111,14 +110,6 @@ public class Level2 extends AbstractLevel implements ILevel {
 	public void setEvent(LevelChangeEvent event) {
 
 	}
-
-
-	//TODO Remove after test
-	@Override
-	public Stack<Coordinates> getPath() {
-		return null;
-	}
-
 
 	@Override
 	public void setListeners(List<LevelListener> listeners) {

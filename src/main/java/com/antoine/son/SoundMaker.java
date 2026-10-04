@@ -20,7 +20,7 @@ public abstract class SoundMaker {
     /**Le flux d'entrée*/
     protected AudioInputStream ais=null;
 
-    /**Le flux "d'écriture" vers les périphérique de sons*/
+    /**Le flux "d'écriture" vers les périphérique de sons, null si aucune sortie audio n'est disponible*/
     protected SourceDataLine line;
 
     /**Etat qui simule si l'utilisateur du lecteur est toujours d'actualité*/
@@ -64,7 +64,7 @@ public abstract class SoundMaker {
      * @param volume le volume (coefficient) à appliquer.
      */
     private void checkVolumeinRange(float volume){
-        if(volume < 0 && volume > 1)
+        if(volume < 0 || volume > 1)
             throw new IllegalArgumentException("volume doit être compris entre 0 et 1 :"+volume);
     }
 
@@ -72,6 +72,9 @@ public abstract class SoundMaker {
      * <p>Démarre le Thread ou le réveille, selon son état actuel.</p>
      */
     public void play(){
+        if (line == null)
+            return;
+
         if (!thread.isAlive()){
             thread.start();
         }else{
@@ -89,6 +92,8 @@ public abstract class SoundMaker {
      */
     private void init(String musicPath){
         URL url = this.getClass().getResource(musicPath);
+        if (url == null)
+            throw new RuntimeException("Fichier son introuvable : " + musicPath);
 
         try {
 
@@ -131,7 +136,11 @@ public abstract class SoundMaker {
 
             line.start();
 
-        }catch (LineUnavailableException | IOException | UnsupportedAudioFileException e) {
+        }catch (LineUnavailableException | IllegalArgumentException e) {
+            // Aucun périphérique audio disponible : le lecteur reste muet.
+            System.err.println("Aucune sortie audio disponible, son désactivé : " + musicPath);
+            line = null;
+        }catch (IOException | UnsupportedAudioFileException e) {
             e.printStackTrace();
             throw new RuntimeException("erreur de lecture du fichier de musique");
         }
