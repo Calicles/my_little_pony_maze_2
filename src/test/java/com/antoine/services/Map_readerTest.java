@@ -1,6 +1,5 @@
-package test.com.antoine.services;
+package com.antoine.services;
 
-import com.antoine.services.Map_reader;
 import org.junit.Test;
 
 import java.awt.image.BufferedImage;
@@ -10,8 +9,8 @@ import static org.junit.Assert.*;
 
 public class Map_readerTest {
 
-    String mapPath= "./ressources/maps/levelApple/map.txt";
-    String tileSetPath= "./ressources/maps/tileSet.txt";
+    String mapPath= "/ressources/maps/levelApple/map.txt";
+    String tileSetPath= "/ressources/maps/levelApple/tileSet.txt";
 
 
     /**
@@ -20,7 +19,7 @@ public class Map_readerTest {
     @Test
     public void readMap() {
         int[][] map= Map_reader.readMap(mapPath);
-        assertTrue(( map != null ));
+        assertNotNull(map);
     }
 
 
@@ -30,17 +29,8 @@ public class Map_readerTest {
     @Test
     public void readTileSet() {
        HashMap<Integer, BufferedImage> set= Map_reader.readTileSet(tileSetPath);
-       assertTrue(( set != null ));
-    }
-
-
-    /**
-     * test sur nombre colonne
-     */
-    @Test
-    public void readMap2() {
-        int[][] map= Map_reader.readMap(mapPath);
-        assertTrue(( map.length == 20 ));
+       assertNotNull(set);
+       assertFalse(set.isEmpty());
     }
 
 
@@ -48,9 +38,19 @@ public class Map_readerTest {
      * test sur nombre de lignes
      */
     @Test
+    public void readMap2() {
+        int[][] map= Map_reader.readMap(mapPath);
+        assertEquals(20, map.length);
+    }
+
+
+    /**
+     * test sur nombre de colonnes
+     */
+    @Test
     public void readMap3() {
         int[][] map= Map_reader.readMap(mapPath);
-        assertTrue(( map[0].length == 20 ));
+        assertEquals(20, map[0].length);
     }
 
 
@@ -60,6 +60,6 @@ public class Map_readerTest {
     @Test
     public void readMap4() {
         int[][] map= Map_reader.readMap(mapPath);
-        assertTrue(( map[1][0] == 7 ));
+        assertEquals(7, map[1][0]);
     }
 }

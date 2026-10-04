@@ -64,7 +64,7 @@ public abstract class SoundMaker {
      * @param volume le volume (coefficient) à appliquer.
      */
     private void checkVolumeinRange(float volume){
-        if(volume < 0 && volume > 1)
+        if(volume < 0 || volume > 1)
             throw new IllegalArgumentException("volume doit être compris entre 0 et 1 :"+volume);
     }
 
@@ -92,6 +92,8 @@ public abstract class SoundMaker {
      */
     private void init(String musicPath){
         URL url = this.getClass().getResource(musicPath);
+        if (url == null)
+            throw new RuntimeException("Fichier son introuvable : " + musicPath);
 
         try {
 
