@@ -1,0 +1,38 @@
+plugins {
+    id 'application'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+    targetCompatibility = JavaVersion.VERSION_11
+}
+
+application {
+    mainClass = 'com.antoine.gdx.lwjgl3.Lwjgl3Launcher'
+    applicationName = 'ponymaze'
+}
+
+sourceSets.main.resources.srcDirs += [rootProject.file('assets').path]
+
+dependencies {
+    implementation project(':core')
+    implementation "com.badlogicgames.gdx:gdx-backend-lwjgl3:$gdxVersion"
+    implementation "com.badlogicgames.gdx:gdx-platform:$gdxVersion:natives-desktop"
+}
+
+// Sur macOS, LWJGL3 doit tourner sur le premier thread.
+tasks.named('run') {
+    if (System.getProperty('os.name').toLowerCase().contains('mac')) {
+        jvmArgs '-XstartOnFirstThread'
+    }
+}
+
+// Archive autonome : gradlew lwjgl3:dist -> lwjgl3/build/libs/ponymaze-1.0.0.jar
+tasks.register('dist', Jar) {
+    archiveBaseName = 'ponymaze'
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    manifest { attributes 'Main-Class': application.mainClass }
+    dependsOn configurations.runtimeClasspath
+    from { configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
