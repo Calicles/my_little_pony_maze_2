@@ -1,0 +1,30 @@
+pluginManagement {
+    repositories {
+        gradlePluginPortal()
+        google()
+        mavenCentral()
+    }
+    plugins {
+        id 'com.android.application' version '8.9.1'
+    }
+}
+
+dependencyResolutionManagement {
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+
+rootProject.name = 'ponymaze'
+
+include 'core', 'lwjgl3'
+
+// Le module Android n'est inclus que si un SDK Android est disponible
+// (GitHub Actions, Android Studio) : le reste du projet se compile sans.
+def localProperties = file('local.properties')
+def hasAndroidSdk = System.getenv('ANDROID_HOME') || System.getenv('ANDROID_SDK_ROOT') ||
+        (localProperties.exists() && localProperties.text.contains('sdk.dir'))
+if (hasAndroidSdk) {
+    include 'android'
+}
